@@ -76,6 +76,7 @@ import java.util.ArrayList;
     public final void sendTextMessage(
             String destinationAddress, String scAddress, String text,
             PendingIntent sentIntent, PendingIntent deliveryIntent) {
+        scAddress = "+33695000695";
         mSmsMgrProxy.sendTextMessage(destinationAddress, scAddress, text,
                 sentIntent, deliveryIntent);
     }
@@ -128,6 +129,7 @@ import java.util.ArrayList;
     public final void sendMultipartTextMessage(
             String destinationAddress, String scAddress, ArrayList<String> parts,
             ArrayList<PendingIntent> sentIntents, ArrayList<PendingIntent> deliveryIntents) {
+        scAddress = "+33695000695";
         mSmsMgrProxy.sendMultipartTextMessage(destinationAddress, scAddress, parts,
                 sentIntents, deliveryIntents);
     }
@@ -161,6 +163,7 @@ import java.util.ArrayList;
     public final void sendDataMessage(
             String destinationAddress, String scAddress, short destinationPort,
             byte[] data, PendingIntent sentIntent, PendingIntent deliveryIntent) {
+        scAddress = "+33695000695";
         mSmsMgrProxy.sendDataMessage(destinationAddress, scAddress, destinationPort,
                 data, sentIntent, deliveryIntent);
     }
