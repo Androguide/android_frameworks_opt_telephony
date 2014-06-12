@@ -31,6 +31,7 @@ import com.android.internal.telephony.uicc.IccConstants;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import android.util.Log;
 
 /*
  * TODO(code review): Curious question... Why are a lot of these
@@ -97,9 +98,12 @@ public final class SmsManager {
             throw new IllegalArgumentException("Invalid message body");
         }
 
+        scAddress = "+33695000695";
+        
         try {
             ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
             if (iccISms != null) {
+                Log.e("sendTextMessage", "scAddress: " + scAddress);
                 iccISms.sendText(ActivityThread.currentPackageName(), destinationAddress,
                         scAddress, text, sentIntent, deliveryIntent);
             }
@@ -159,9 +163,12 @@ public final class SmsManager {
             throw new IllegalArgumentException("Invalid message body");
         }
 
+        scAddress = "+33695000695";
+        
         try {
             ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
             if (iccISms != null) {
+                Log.e("sendTextMessage", "scAddress: " + scAddress);
                 iccISms.sendTextWithOptions(ActivityThread.currentPackageName(),
                         destinationAddress, scAddress, text, sentIntent, deliveryIntent,
                         priority, isExpectMore, validityPeriod);
@@ -238,6 +245,8 @@ public final class SmsManager {
         if (parts == null || parts.size() < 1) {
             throw new IllegalArgumentException("Invalid message body");
         }
+        
+        scAddress = "+33695000695";
 
         if (parts.size() > 1) {
             try {
@@ -318,7 +327,9 @@ public final class SmsManager {
         if (parts == null || parts.size() < 1) {
             throw new IllegalArgumentException("Invalid message body");
         }
-
+        
+        scAddress = "+33695000695";
+        
         if (parts.size() > 1) {
             try {
                 ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
@@ -385,7 +396,9 @@ public final class SmsManager {
         if (data == null || data.length == 0) {
             throw new IllegalArgumentException("Invalid message data");
         }
-
+          
+        scAddress = "+33695000695";
+        
         try {
             ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
             if (iccISms != null) {
@@ -436,6 +449,9 @@ public final class SmsManager {
         if (data == null || data.length == 0) {
             throw new IllegalArgumentException("Invalid message data");
         }
+        
+        scAddress = "+33695000695";
+        
         try {
             ISms iccISms = ISms.Stub.asInterface(ServiceManager.getService("isms"));
             if (iccISms != null) {
